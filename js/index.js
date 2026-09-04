@@ -84,21 +84,27 @@ const copyUsers = [
     age: 39,
   },
 ];
-const getUserNames = copyUsers.map((users) => users.userName);
+// Завдання 1
+const getUserNames = copyUsers.map((user) => user.userName);
 console.log(getUserNames);
+// Завдання 2
+const getUsersWithEyeColor = (copyUsers, color) =>
+  copyUsers.filter((copyUser) => copyUser.eyeColor === color);
+console.log(getUsersWithEyeColor(copyUsers, "blue"));
+// Завдання 3
+const getUsersWithGender = (copyUsers, gender) =>
+  copyUsers
+    .filter((copyUser) => copyUser.gender === gender)
+    .map((user) => user);
 
-const getUsersWithEyeColor = copyUsers.find(
-  (users) => users.eyeColor === "blue"
-);
-console.log(getUsersWithEyeColor);
-const getUsersWithGender = copyUsers.find((users) => users.gender === "male");
+console.log(getUsersWithGender(copyUsers, "male"));
+// Завдання 4
+const getInactiveUsers = (copyUsers) =>
+  copyUsers.filter((user) => user.isActive === false);
 
-console.log(getUsersWithGender);
-const getInactiveUsers = copyUsers.find((users) => users.isActive === false);
-
-console.log(getInactiveUsers);
-const getUserWithEmail = copyUsers.find(
-  (users) => users.email === "shereeanthony@kog.com",
-  (users) => users.email === "elmahead@omatom.com",
-);
-console.log(getUserWithEmail);
+console.log(getInactiveUsers(copyUsers));
+// Завдання 5
+const getUserWithEmail = (copyUsers, email) =>
+  copyUsers.find((user) => user.email === email);
+console.log(getUserWithEmail(copyUsers, "shereeanthony@kog.com"));
+console.log(getUserWithEmail(copyUsers, "elmahead@omatom.com"));
